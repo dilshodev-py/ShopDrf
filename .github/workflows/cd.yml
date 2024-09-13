@@ -14,10 +14,10 @@ jobs:
       - name: executing remote ssh commands using ssh-key
         uses: appleboy/ssh-action@v0.1.10
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USER }}
-          password: ${{ secrets.PASSWORD }}
-          key: ${{ secrets.SSH_KEY }}
+          host: 92.118.113.35
+          username: root
+          password: uR6@9FiVfeB#2e
+          key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCFXzfzRZaX3h2sbqq0c61SHK5lE8mOAOVgRWh93YaVbde3PQBuwuL2CZCuSUfwaUayOSA3S4zzdRwQwdFcH+IIpO4Di6YGa+09vjOdvzTV0spF2sBTDZt+25yaY5J4WGifyJaR6cntaXiDooszKjZilmrWFPeJCkS4D+3NWry8GS2LtVdDznEknG/Kc2k/ZjiiNDowzRGTLCMVDZczG/73CtrXpeebjmBwoGRm7FqkXGqnobVrEQrsGpyyAhPngIQEASTtngjei9s504TA8K/e2TlyHg4bg0A/85UpOAWrQI/oUgHMdKy/pTo9IZOZVHnJeFcI6uyX6buOFXahXjDMO7Di7iExNkhW+fiisGDcuo3X9uF0SjtecGTQGyzrpMJXdWDPRZRQc0VvOV/MCYnw3+DbtTnjgigiK6ZqxwP+HR8y60iWlMzJ+eG+8BOm1gtdvfAm6VpQhem8c6vpf8oPDzwNYGDtc0TduKko0HYekAvGpYmzBleBwAsVsgSWZps= root@3467533-tr33911.twc1.net
 
 
           script: |
