@@ -35,7 +35,6 @@ class Product(BaseSlugModel):
     discount = SmallIntegerField()
     quantity = SmallIntegerField()
     description = TextField()
-    image = ImageField(upload_to='products/%y/%m/%d/')
     category = ForeignKey('apps.Category' , CASCADE , related_name='products')
 
 
