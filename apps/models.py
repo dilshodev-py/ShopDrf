@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django.db.models import Model, CharField, DateTimeField, TextField, SmallIntegerField, DecimalField, ForeignKey, \
-    CASCADE, SET_NULL, SlugField
+    CASCADE, SET_NULL, SlugField , ImageField
 from django.db.models.functions import Now
 from django.utils.text import slugify
 
@@ -35,6 +35,7 @@ class Product(BaseSlugModel):
     discount = SmallIntegerField()
     quantity = SmallIntegerField()
     description = TextField()
+    image = ImageField(upload_to='products/%y/%m/%d/')
     category = ForeignKey('apps.Category' , CASCADE , related_name='products')
 
 

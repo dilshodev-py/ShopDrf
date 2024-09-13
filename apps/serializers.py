@@ -3,7 +3,13 @@ from http import HTTPStatus
 from django.core.exceptions import ValidationError
 from rest_framework.serializers import ModelSerializer
 
-from apps.models import Category
+from apps.models import Category, Product
+
+
+class ProductModelSerializer(ModelSerializer):
+    class Meta:
+        model = Product
+        exclude = "slug" , "created_at"
 
 
 class CategoryModelSerializer(ModelSerializer):
