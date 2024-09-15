@@ -1,8 +1,9 @@
 /etc/nginx/sites-available/shop_drf
+/etc/nginx/sites-enable/shop_drf
 
 server {
-    listen       8000;
-    server_name  147.45.189.175;
+    listen       8001;
+    server_name  13.60.233.187;
 
     location = /favicon.ico { access_log off; log_not_found off; }
 
@@ -61,6 +62,9 @@ systemctl enable shop_drf.service
 systemctl start shop_drf.service
 systemctl status shop_drf.service
 systemctl restart shop_drf.service
+
+
+systemctl restart nginx.service
 
 
 
