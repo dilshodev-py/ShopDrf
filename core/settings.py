@@ -126,7 +126,7 @@ REST_FRAMEWORK = {
 }
 
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'P23 group API',
+    'TITLE': 'P23  group API',
     'DESCRIPTION': 'P23 group description',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
