@@ -6,8 +6,6 @@
     pull_request:
       branches: [ "master" ]
 
-
-
   jobs:
     deploy:
       name: Deploy
@@ -23,4 +21,4 @@
             script: |
               cd /var/www/projects/
               git pull 
-              systemctl restart shop_drf.service
+              sudo systemctl restart shop_drf.service
