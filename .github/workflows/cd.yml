@@ -19,6 +19,6 @@
             key: ${{ secrets.SSH_KEY }}
             port: ${{ secrets.PORT }}
             script: |
-              cd /var/www/projects/
+              cd /var/www/projects/ShopDrf
               git pull 
               sudo systemctl restart shop_drf.service
