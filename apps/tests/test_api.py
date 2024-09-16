@@ -43,6 +43,7 @@ from http import HTTPStatus
 from os.path import join
 
 from django.core.files.base import ContentFile
+from django.core.files.uploadedfile import InMemoryUploadedFile, UploadedFile, SimpleUploadedFile
 from django.test.client import Client
 from rest_framework.reverse import reverse
 
@@ -68,23 +69,27 @@ def test_category_create(client, categories):
     assert categories_count == 5
 
 
-# @pytest.mark.django_db
-# def test_product_create(client: Client  , categories):
-#     path = reverse('product-list-create')
-#     with open(join(BASE_DIR, 'img.png') , 'rb') as f:
-#         # image_binary = f.read()
-#         file = ContentFile( f.read() ,'name')
-#         data = {
-#             "name": "string",
-#             "price": "7.1",
-#             "discount": 100,
-#             "quantity": 90,
-#             "description": "string",
-#             "image": file,
-#             "category": 1
-#         }
-#
-#         response = client.post(path, data=data , content_type='multipart/form-data')
-#     print(response)
+@pytest.mark.django_db
+def test_product_create(client: Client  , categories):
+    path = reverse('product-list-create')
+    with open(join(BASE_DIR, 'img.png') , 'rb') as f:
+        file = SimpleUploadedFile(
+            name='img.png',
+            content=f.read(),
+            content_type='image/png'
+        )
+        data = {
+            "name": "string",
+            "price": 7.1,
+            "discount": 100,
+            "quantity": 90,
+            "description": "string",
+            "image": file,
+            "category": 1
+        }
+        response = client.post(path, data=data , format='multipart')
+    assert response.status_code == 201
+    assert response.data['id'] == 1
+
 
 

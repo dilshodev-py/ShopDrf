@@ -20,3 +20,6 @@ class CategoryRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
 class ProductListCreateAPIView(ListCreateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductModelSerializer
+
+    # def post(self, request, *args, **kwargs):
+    #     print(request)

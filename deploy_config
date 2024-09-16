@@ -3,7 +3,7 @@
 
 server {
     listen       8001;
-    server_name  13.60.233.187;
+    server_name  51.20.115.45;
 
     location = /favicon.ico { access_log off; log_not_found off; }
 
@@ -42,6 +42,8 @@ ExecStart=/var/www/projects/ShopDrf/.venv/bin/gunicorn --workers 1 --bind unix:/
 
 [Install]
 WantedBy=multi-user.target
+
+
 
 
 /var/www/projects/ShopDrf
